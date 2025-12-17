@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+:root {
+    --bg-dark: #0a0a0f;
+    --bg-card: #12121a;
+    --text-primary: #ffffff;
+    --text-muted: #8a8a9a;
+    --neon-cyan: #00f5ff;
+    --neon-magenta: #ff00ff;
+    --border-color: #1f1f2e;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.page-wrapper {
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1);
+}
+
+.logo span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+    color: var(--neon-cyan);
+    letter-spacing: 0.1em;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--neon-cyan);
+}
+
+.login-register {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-login {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-register {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--neon-cyan);
+    text-decoration: none;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+}
+
+.btn-register:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+.welcome {
+    padding: 10rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(0, 245, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 40%, rgba(255, 0, 255, 0.15) 0%, transparent 50%);
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 1;
+}
+
+.welcome h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.grad-text {
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.welcome p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.start-btn {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 245, 255, 0.5);
+}
+
+.main {
+    padding: 0 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2rem;
+}
+
+.games-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.neon-text{
+    color: var(--neon-cyan);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.game-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.game-card:hover {
+    border-color: rgba(0, 245, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.15);
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.1);
+}
+
+.game-card:hover h4 {
+    color: var(--neon-cyan);
+}
+
+.game-image {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(255, 0, 255, 0.05));
+}
+
+.game-image img {
+    width: 250px;
+    height: 230px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.game-info {
+    padding: 1rem;
+}
+
+.game-info h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.game-info p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.sidebar-content {
+    position: sticky;
+    top: 6rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.trophy-icon {
+    font-size: 1.5rem;
+}
+
+.sidebar-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+}
+
+.tour-list {
+    list-style: none;
+}
+
+.tour-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tour-list li:last-child {
+    border-bottom: none;
+}
+
+.tour-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.tour-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.btn-alltour {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--neon-cyan);
+    border: 1px solid rgba(0, 245, 255, 0.5);
+    border-radius: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-alltour:hover {
+    background: rgba(0, 245, 255, 0.1);
+    border-color: var(--neon-cyan);
+}
+
+.footer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.main-tournaments {
+    padding: 8rem 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+
+.login-main {
+    padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+}
+
+.login-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    background: #0f0f16;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.login-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+}
+
+.login-form button {
+    width: 100%;
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sidebar-content {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+}
